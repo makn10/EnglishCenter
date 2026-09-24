@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Meta Tags -->
-    <title>English Center | Premium English Learning Institute</title>
-    <meta name="description" content="Join English Center to Learn English Confidently, Speak Fluently, and Succeed Globally. Expert courses for IELTS, Spoken English, and Business English.">
+    <title>English Learning Center | Better English, Brighter Future</title>
+    <meta name="description" content="Build your confidence, improve your communication and achieve your global dreams with us.">
     
-    <!-- Google Fonts: Poppins & Inter -->
+    <!-- Google Fonts: Poppins, Inter, Caveat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,54 +19,61 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            blue: '#0A2540',
-                            lightBlue: '#1E3A8A',
-                            gold: '#D4AF37',
-                            lightGold: '#FDE047',
-                            darkBg: '#0F172A',
-                            darkCard: '#1E293B',
-                            darkHover: '#334155'
+                            purple: '#E0B0FF',
+                            purpleLight: '#F3E5F5',
+                            red: '#E41E26',
+                            redLight: '#FDECEA',
+                            bg: '#F8F9FF',
+                            dark: '#1A1A3D',
+                            gray: '#6B7280',
+                            white: '#FFFFFF'
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Poppins', 'sans-serif'],
+                        handwriting: ['Caveat', 'cursive'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(26, 26, 61, 0.08)',
+                        'cta': '0 10px 20px -5px rgba(228, 30, 38, 0.3)',
+                        'card': '0 20px 25px -5px rgba(0, 0, 0, 0.05)',
                     }
                 }
             }
         }
     </script>
 
-    <!-- Custom Styles & Animations -->
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.8);
+        body { background-color: #F8F9FF; }
+        .glass-nav {
+            background: rgba(248, 249, 255, 0.85);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(224, 176, 255, 0.3);
         }
-        .dark .glass {
-            background: rgba(15, 23, 42, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        .hover-lift { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; }
         .hover-lift:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 25px 30px -5px rgba(26, 26, 61, 0.1);
         }
-        /* Custom Scrollbar */
+        .bg-pattern {
+            background-image: radial-gradient(#E0B0FF 2px, transparent 2px);
+            background-size: 30px 30px;
+        }
+        .dashed-line {
+            background-image: linear-gradient(to bottom, #E0B0FF 50%, rgba(255,255,255,0) 0%);
+            background-position: right;
+            background-size: 2px 15px;
+            background-repeat: repeat-y;
+        }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f8fafc; }
-        .dark ::-webkit-scrollbar-track { background: #0F172A; }
-        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #b5952f; }
+        ::-webkit-scrollbar-track { background: #F8F9FF; }
+        ::-webkit-scrollbar-thumb { background: #E0B0FF; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E41E26; }
         
         .faq-answer {
             max-height: 0;
@@ -76,123 +82,131 @@
         }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50 dark:bg-brand-darkBg dark:text-gray-200 transition-colors duration-300">
+<body class="font-sans text-brand-gray antialiased">
 
     <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <span class="font-heading font-extrabold text-3xl text-brand-blue dark:text-white tracking-tight">
-                        English<span class="text-brand-gold">Center</span>
-                    </span>
+                <div class="flex-shrink-0 flex items-center cursor-pointer gap-3">
+                    <div class="bg-brand-purple text-brand-dark p-2 rounded-lg hover:bg-brand-red hover:text-white transition-colors duration-300">
+                        <i class="fas fa-book-reader text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-2xl text-brand-dark leading-none block tracking-tight">
+                            English<span class="text-brand-red">.</span>
+                        </span>
+                        <span class="text-[9px] font-bold text-brand-gray uppercase tracking-[0.2em] block">Learning Center</span>
+                    </div>
                 </div>
                 
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex space-x-6 items-center">
-                    <a href="#home" class="font-medium hover:text-brand-gold transition-colors">Home</a>
-                    <a href="#about" class="font-medium hover:text-brand-gold transition-colors">About Us</a>
-                    <a href="#courses" class="font-medium hover:text-brand-gold transition-colors">Courses</a>
-                    <a href="#resources" class="font-medium hover:text-brand-gold transition-colors">Resources</a>
-                    <a href="#testimonials" class="font-medium hover:text-brand-gold transition-colors">Reviews</a>
-                    <a href="#faq" class="font-medium hover:text-brand-gold transition-colors">FAQ</a>
+                <div class="hidden lg:flex space-x-8 items-center">
+                    <a href="#home" class="font-medium text-brand-red font-heading border-b-2 border-brand-red pb-1">Home</a>
+                    <a href="#courses" class="font-medium text-brand-dark font-heading hover:text-brand-red transition-colors">Courses</a>
+                    <a href="#roadmap" class="font-medium text-brand-dark font-heading hover:text-brand-red transition-colors">Roadmap</a>
+                    <a href="#pricing" class="font-medium text-brand-dark font-heading hover:text-brand-red transition-colors">Pricing</a>
+                    <a href="#resources" class="font-medium text-brand-dark font-heading hover:text-brand-red transition-colors">Resources</a>
                     
-                    <!-- Dark Mode Toggle -->
-                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-brand-gold dark:hover:bg-brand-gold transition-colors mx-2">
-                        <i class="fas fa-moon text-gray-700 dark:text-gray-200" id="theme-icon"></i>
-                    </button>
-                    
-                    <!-- Login / Register CTA -->
-                    <a href="#contact" class="bg-brand-blue dark:bg-brand-lightBlue text-white px-6 py-2.5 rounded-full font-medium hover:bg-brand-gold transition-all shadow-lg hover:shadow-brand-gold/30">
-                        Student Login
+                    <a href="#contact" class="bg-brand-red text-white px-7 py-2.5 rounded-full font-semibold hover:bg-red-700 transition-all shadow-cta hover:shadow-lg flex items-center gap-2">
+                        Get Started <i class="fas fa-arrow-right text-sm"></i>
                     </a>
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center gap-4">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
-                        <i class="fas fa-moon text-gray-700 dark:text-gray-200" id="theme-icon-mobile"></i>
-                    </button>
-                    <button id="mobile-menu-btn" class="text-brand-blue dark:text-white focus:outline-none">
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-dark focus:outline-none">
                         <i class="fas fa-bars text-3xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden glass absolute w-full border-t border-gray-200 dark:border-gray-800 shadow-xl">
-            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col bg-white/95 dark:bg-brand-darkBg/95">
-                <a href="#home" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-brand-darkHover">Home</a>
-                <a href="#about" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-brand-darkHover">About Us</a>
-                <a href="#courses" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-brand-darkHover">Courses</a>
-                <a href="#resources" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-brand-darkHover">Resources</a>
-                <a href="#faq" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-brand-darkHover">FAQ</a>
-                <a href="#contact" class="block px-3 py-3 text-base font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-brand-darkHover">Contact Us</a>
-                <a href="#" class="block px-3 py-3 mt-4 text-center text-base font-medium text-white bg-brand-blue rounded-lg">Student Login</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#home" class="block px-3 py-3 text-base font-bold text-brand-red">Home</a>
+                <a href="#courses" class="block px-3 py-3 text-base font-medium text-brand-dark hover:bg-brand-purpleLight rounded-lg">Courses</a>
+                <a href="#roadmap" class="block px-3 py-3 text-base font-medium text-brand-dark hover:bg-brand-purpleLight rounded-lg">Roadmap</a>
+                <a href="#pricing" class="block px-3 py-3 text-base font-medium text-brand-dark hover:bg-brand-purpleLight rounded-lg">Pricing</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center text-base font-bold text-white bg-brand-red rounded-lg shadow-cta">Get Started</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden relative">
-        <!-- Background decorative elements -->
-        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-lightBlue opacity-10 rounded-full blur-3xl"></div>
-            <div class="absolute top-1/2 -left-24 w-72 h-72 bg-brand-gold opacity-10 rounded-full blur-3xl"></div>
-        </div>
-        
+    <section id="home" class="pt-32 pb-20 lg:pt-44 lg:pb-28 relative overflow-hidden">
+        <div class="absolute top-20 right-10 w-80 h-80 bg-brand-purple opacity-20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 left-10 w-96 h-96 bg-brand-red opacity-5 rounded-full blur-3xl"></div>
+        <div class="absolute top-40 right-20 w-48 h-48 bg-pattern opacity-40"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-16">
-                <!-- Text Content -->
-                <div class="w-full lg:w-3/5 space-y-8 text-center lg:text-left">
-                    <div class="inline-block bg-blue-50 dark:bg-brand-darkHover px-4 py-2 rounded-full border border-blue-100 dark:border-gray-700">
-                        <span class="text-brand-blue dark:text-brand-lightGold font-semibold text-sm">#1 English Learning Platform</span>
+                
+                <div class="w-full lg:w-1/2 space-y-8 relative">
+                    <div class="absolute -top-10 -left-6 text-brand-red font-handwriting text-4xl rotate-[-12deg] animate-bounce">
+                        Your English Journey!
                     </div>
-                    <h1 class="font-heading text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight text-brand-blue dark:text-white">
-                        Master English. <br>
-                        <span class="text-brand-gold">Unlock Your Future.</span>
-                    </h1>
-                    <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto lg:mx-0">
-                        From basic grammar to advanced IELTS preparation. Join the most prestigious <strong>English Center</strong> and transform your communication skills with expert guidance.
+
+                    <div>
+                        <h2 class="font-heading text-2xl md:text-3xl font-bold text-brand-red mb-2">
+                            Better English,
+                        </h2>
+                        <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-brand-dark leading-tight tracking-tight">
+                            Brighter <br>Future.
+                        </h1>
+                    </div>
+                    <p class="text-lg text-brand-gray max-w-lg leading-relaxed">
+                        Build your confidence, master professional communication, and achieve your global dreams with our expertly crafted curriculum.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start pt-4">
-                        <a href="#courses" class="bg-brand-blue text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-gold transition-all shadow-xl hover:shadow-brand-gold/40 text-lg flex items-center justify-center gap-2">
-                            Browse Courses <i class="fas fa-arrow-right"></i>
+                    
+                    <div class="flex flex-col sm:flex-row gap-5 pt-2">
+                        <a href="#courses" class="bg-brand-red text-white px-8 py-4 rounded-full font-bold hover:bg-red-700 transition-all shadow-cta text-lg flex items-center justify-center gap-2 hover-lift">
+                            Explore Courses <i class="fas fa-rocket"></i>
                         </a>
-                        <a href="#contact" class="bg-white dark:bg-brand-darkCard border-2 border-brand-blue dark:border-gray-600 text-brand-blue dark:text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-50 dark:hover:bg-gray-800 transition-all shadow-lg text-lg flex items-center justify-center gap-2">
-                            <i class="fas fa-calendar-check"></i> Book Free Evaluation
+                        <a href="#contact" class="bg-white border-2 border-brand-purple text-brand-dark px-8 py-4 rounded-full font-bold hover:bg-brand-purple hover:text-brand-dark transition-all shadow-sm flex items-center justify-center hover-lift">
+                            <i class="fas fa-headset mr-2"></i> Free Consultation
                         </a>
                     </div>
-                    
-                    <!-- Trust Indicators -->
-                    <div class="flex items-center justify-center lg:justify-start gap-4 pt-8">
-                        <div class="flex -space-x-4">
-                            <img class="w-12 h-12 rounded-full border-2 border-white dark:border-brand-darkBg" src="https://i.pravatar.cc/100?img=1" alt="Student">
-                            <img class="w-12 h-12 rounded-full border-2 border-white dark:border-brand-darkBg" src="https://i.pravatar.cc/100?img=2" alt="Student">
-                            <img class="w-12 h-12 rounded-full border-2 border-white dark:border-brand-darkBg" src="https://i.pravatar.cc/100?img=3" alt="Student">
-                            <div class="w-12 h-12 rounded-full border-2 border-white dark:border-brand-darkBg bg-brand-gold flex items-center justify-center text-white text-xs font-bold">+5k</div>
+
+                    <div class="flex flex-wrap items-center gap-8 pt-8 border-t border-brand-purple/20 mt-8">
+                        <div>
+                            <p class="font-heading font-extrabold text-3xl text-brand-dark">15k+</p>
+                            <p class="text-xs font-semibold text-brand-gray uppercase">Active Students</p>
                         </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">
-                            Trusted by <span class="font-bold text-brand-blue dark:text-white">5,000+</span> students globally.
+                        <div class="w-px h-10 bg-brand-purple/30"></div>
+                        <div>
+                            <p class="font-heading font-extrabold text-3xl text-brand-dark">4.9/5</p>
+                            <p class="text-xs font-semibold text-brand-gray uppercase">Average Rating</p>
+                        </div>
+                        <div class="w-px h-10 bg-brand-purple/30"></div>
+                        <div class="flex -space-x-3">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=1" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=2" alt="User">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=3" alt="User">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-brand-purple flex items-center justify-center text-brand-dark text-xs font-bold">+</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Hero Image -->
-                <div class="w-full lg:w-2/5 relative">
-                    <div class="absolute inset-0 bg-brand-gold rounded-full blur-3xl opacity-20 animate-pulse"></div>
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students Learning" class="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl">
-                    
-                    <!-- Floating Stat Card -->
-                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-brand-darkCard p-4 rounded-xl shadow-xl z-20 border border-gray-100 dark:border-gray-700 flex items-center gap-4 hover-lift">
-                        <div class="bg-green-100 dark:bg-green-900/30 p-3 rounded-lg text-green-600 dark:text-green-400">
-                            <i class="fas fa-star text-2xl"></i>
+                <div class="w-full lg:w-1/2 relative flex justify-center">
+                    <div class="relative w-full max-w-lg">
+                        <!-- Custom Shape Behind Image -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand-purple to-brand-purpleLight rounded-[3rem] rotate-6 scale-105 -z-10 shadow-soft"></div>
+                        
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students Learning" class="w-full h-[500px] object-cover rounded-[3rem] shadow-card border-4 border-white">
+                        
+                        <!-- Floating Badge 1 -->
+                        <div class="absolute -right-6 top-16 font-handwriting text-3xl text-brand-dark rotate-[15deg] bg-white px-5 py-3 rounded-2xl shadow-xl border border-brand-purpleLight">
+                            Speak Confidently! <span class="text-brand-red">✓</span>
                         </div>
-                        <div>
-                            <p class="text-2xl font-bold text-brand-blue dark:text-white">4.9/5</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">Average Student Rating</p>
+                        
+                        <!-- Floating Badge 2 -->
+                        <div class="absolute -left-8 bottom-24 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 hover-lift border border-brand-purpleLight">
+                            <div class="bg-brand-redLight p-3 rounded-xl text-brand-red">
+                                <i class="fas fa-award text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-brand-dark font-extrabold text-sm font-heading">Certified</p>
+                                <p class="text-brand-gray text-xs">Expert Instructors</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -200,413 +214,258 @@
         </div>
     </section>
 
-    <!-- Features / Why Choose Us -->
-    <section class="py-12 bg-white dark:bg-brand-darkCard transition-colors border-y border-gray-100 dark:border-gray-800">
+    <!-- Roadmap / How It Works -->
+    <section id="roadmap" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature 1 -->
-                <div class="flex items-start gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-50 dark:bg-brand-darkBg text-brand-blue dark:text-brand-gold rounded-xl flex items-center justify-center text-xl">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg dark:text-white">Expert Instructors</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">CELTA & TESOL certified professionals.</p>
-                    </div>
-                </div>
-                <!-- Feature 2 -->
-                <div class="flex items-start gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-50 dark:bg-brand-darkBg text-brand-blue dark:text-brand-gold rounded-xl flex items-center justify-center text-xl">
-                        <i class="fas fa-laptop-house"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg dark:text-white">Flexible Learning</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Online & Offline classes tailored to your schedule.</p>
-                    </div>
-                </div>
-                <!-- Feature 3 -->
-                <div class="flex items-start gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-50 dark:bg-brand-darkBg text-brand-blue dark:text-brand-gold rounded-xl flex items-center justify-center text-xl">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg dark:text-white">Modern Curriculum</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Updated materials focusing on real-world usage.</p>
-                    </div>
-                </div>
-                <!-- Feature 4 -->
-                <div class="flex items-start gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-50 dark:bg-brand-darkBg text-brand-blue dark:text-brand-gold rounded-xl flex items-center justify-center text-xl">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg dark:text-white">Global Certification</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Earn valid certificates upon course completion.</p>
-                    </div>
+            <div class="text-center mb-16 relative">
+                <span class="text-brand-red font-bold tracking-wider uppercase text-sm mb-2 block">Our Process</span>
+                <h2 class="font-heading text-4xl font-extrabold text-brand-dark mb-4">How You Will Learn</h2>
+                <div class="absolute left-0 md:left-32 top-0 font-handwriting text-3xl text-brand-purple rotate-[-10deg]">
+                    Step by step!
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-gray-50 dark:bg-brand-darkBg transition-colors relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <!-- Image Grid -->
-                <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Classroom" class="rounded-2xl w-full h-64 object-cover shadow-lg mt-8">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Seminar" class="rounded-2xl w-full h-64 object-cover shadow-lg">
-                </div>
-                <!-- Content -->
-                <div class="w-full lg:w-1/2">
-                    <span class="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2 block">About English Center</span>
-                    <h2 class="font-heading text-3xl md:text-5xl font-bold text-brand-blue dark:text-white mb-6">Empowering Your Voice in a Global World.</h2>
-                    <p class="text-gray-600 dark:text-gray-400 mb-6 text-lg leading-relaxed">
-                        At English Center, we don't just teach grammar; we build confidence. Established with the vision to break down language barriers, our institute provides world-class educational environments equipped with modern technology and proven methodologies.
-                    </p>
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-check-circle text-brand-gold text-xl"></i>
-                            <span class="font-medium dark:text-gray-200">Interactive and highly engaging classes</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-check-circle text-brand-gold text-xl"></i>
-                            <span class="font-medium dark:text-gray-200">Personalized feedback and progress tracking</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-check-circle text-brand-gold text-xl"></i>
-                            <span class="font-medium dark:text-gray-200">State-of-the-art language labs and resources</span>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-10 right-10 h-0.5 bg-brand-purpleLight -translate-y-1/2 z-0"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 bg-brand-bg p-8 rounded-3xl shadow-soft text-center hover-lift border-2 border-transparent hover:border-brand-purple transition-all group">
+                    <div class="w-20 h-20 mx-auto bg-white border-4 border-brand-purpleLight text-brand-dark rounded-full flex items-center justify-center text-2xl font-heading font-bold mb-6 group-hover:scale-110 transition-transform">
+                        01
                     </div>
-                    <a href="#contact" class="inline-block border-b-2 border-brand-gold text-brand-blue dark:text-white font-bold hover:text-brand-gold pb-1 transition-colors">Learn More About Our Mission <i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+                    <h3 class="font-heading text-xl font-bold text-brand-dark mb-3">Evaluation</h3>
+                    <p class="text-sm text-brand-gray">We assess your current level through a free initial speaking and writing test.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 bg-brand-bg p-8 rounded-3xl shadow-soft text-center hover-lift border-2 border-transparent hover:border-brand-red transition-all group">
+                    <div class="w-20 h-20 mx-auto bg-brand-red text-white border-4 border-brand-redLight rounded-full flex items-center justify-center text-2xl font-heading font-bold mb-6 group-hover:scale-110 transition-transform shadow-cta">
+                        02
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-dark mb-3">Customized Plan</h3>
+                    <p class="text-sm text-brand-gray">Join a batch tailored to your level, or start personalized 1-on-1 sessions.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 bg-brand-bg p-8 rounded-3xl shadow-soft text-center hover-lift border-2 border-transparent hover:border-brand-purple transition-all group">
+                    <div class="w-20 h-20 mx-auto bg-white border-4 border-brand-purpleLight text-brand-dark rounded-full flex items-center justify-center text-2xl font-heading font-bold mb-6 group-hover:scale-110 transition-transform">
+                        03
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-brand-dark mb-3">Mastery & Certificate</h3>
+                    <p class="text-sm text-brand-gray">Complete the curriculum, pass the final mock test, and receive your certification.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Courses Section -->
-    <section id="courses" class="py-24 bg-white dark:bg-brand-darkCard transition-colors">
+    <section id="courses" class="py-24 bg-brand-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2 block">Our Programs</span>
-                <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-blue dark:text-white mb-4">Explore Our Top Courses</h2>
-                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Comprehensive modules designed for all proficiency levels. Choose the perfect path to achieve your specific language goals.</p>
+                <h2 class="font-heading text-4xl font-extrabold text-brand-dark mb-4">Choose Your Path</h2>
+                <p class="text-brand-gray">Premium programs designed for accelerated learning.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Course 1 -->
-                <div class="bg-gray-50 dark:bg-brand-darkBg rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-100 dark:border-gray-800 flex flex-col h-full">
-                    <div class="h-56 relative group overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Spoken English">
-                        <div class="absolute inset-0 bg-brand-blue/60 flex items-center justify-center">
-                            <h3 class="font-heading text-2xl font-bold text-white tracking-wide">Spoken English</h3>
-                        </div>
-                        <div class="absolute top-4 right-4 bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full">Bestseller</div>
+                <!-- Spoken English -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover-lift group border border-gray-100">
+                    <div class="bg-brand-purpleLight w-16 h-16 rounded-2xl flex items-center justify-center text-brand-purple text-3xl mb-8 group-hover:bg-brand-purple group-hover:text-white transition-colors">
+                        <i class="far fa-comments"></i>
                     </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm flex-grow">Overcome hesitation and speak fluent English in daily life, travel, and social environments.</p>
-                        <ul class="space-y-3 mb-8 text-sm font-medium dark:text-gray-300">
-                            <li class="flex items-center"><i class="fas fa-bullseye text-brand-gold mr-3 w-4"></i> Real-life roleplay</li>
-                            <li class="flex items-center"><i class="fas fa-microphone text-brand-gold mr-3 w-4"></i> Accent neutralization</li>
-                            <li class="flex items-center"><i class="fas fa-clock text-brand-gold mr-3 w-4"></i> 3 Months (3 days/week)</li>
-                        </ul>
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <span class="font-heading font-bold text-brand-blue dark:text-white text-2xl">৳5,000</span>
-                            <button class="bg-brand-blue dark:bg-brand-lightBlue text-white px-5 py-2.5 rounded-lg font-medium hover:bg-brand-gold transition shadow-md">Enroll Now</button>
-                        </div>
-                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-3">Spoken English</h3>
+                    <p class="text-brand-gray mb-6 text-sm leading-relaxed">Master daily conversations, overcome public speaking fear, and improve your accent instantly.</p>
+                    <ul class="space-y-3 mb-8 text-sm font-medium text-brand-dark">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-red"></i> 3 Months Duration</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-red"></i> Live Interactive Classes</li>
+                    </ul>
+                    <a href="#contact" class="inline-block w-full text-center bg-brand-bg text-brand-dark py-3 rounded-xl font-bold hover:bg-brand-dark hover:text-white transition-colors">View Details</a>
                 </div>
 
-                <!-- Course 2 -->
-                <div class="bg-gray-50 dark:bg-brand-darkBg rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-100 dark:border-gray-800 flex flex-col h-full">
-                    <div class="h-56 relative group overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="IELTS Preparation">
-                        <div class="absolute inset-0 bg-brand-darkBg/70 flex items-center justify-center">
-                            <h3 class="font-heading text-2xl font-bold text-brand-gold tracking-wide">IELTS Preparation</h3>
-                        </div>
+                <!-- IELTS Prep -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-card hover-lift group border-2 border-brand-red relative">
+                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-brand-red text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
+                    <div class="bg-brand-redLight w-16 h-16 rounded-2xl flex items-center justify-center text-brand-red text-3xl mb-8 group-hover:bg-brand-red group-hover:text-white transition-colors">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm flex-grow">Intensive training for Academic & General Training IELTS with guaranteed band score strategies.</p>
-                        <ul class="space-y-3 mb-8 text-sm font-medium dark:text-gray-300">
-                            <li class="flex items-center"><i class="fas fa-file-alt text-brand-gold mr-3 w-4"></i> 10 Full Mock Tests</li>
-                            <li class="flex items-center"><i class="fas fa-pen-nib text-brand-gold mr-3 w-4"></i> Advanced Writing Structures</li>
-                            <li class="flex items-center"><i class="fas fa-clock text-brand-gold mr-3 w-4"></i> 2 Months Intensive</li>
-                        </ul>
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <span class="font-heading font-bold text-brand-blue dark:text-white text-2xl">৳8,000</span>
-                            <button class="bg-brand-blue dark:bg-brand-lightBlue text-white px-5 py-2.5 rounded-lg font-medium hover:bg-brand-gold transition shadow-md">Enroll Now</button>
-                        </div>
-                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-3">IELTS Preparation</h3>
+                    <p class="text-brand-gray mb-6 text-sm leading-relaxed">Achieve an 8.0+ Band Score with our intensive mock tests and expert evaluation.</p>
+                    <ul class="space-y-3 mb-8 text-sm font-medium text-brand-dark">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-purple"></i> 10 Full Mock Tests</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-purple"></i> Advanced Writing Strategies</li>
+                    </ul>
+                    <a href="#contact" class="inline-block w-full text-center bg-brand-red text-white py-3 rounded-xl font-bold hover:bg-red-700 shadow-cta transition-colors">Enroll Now</a>
                 </div>
 
-                <!-- Course 3 -->
-                <div class="bg-gray-50 dark:bg-brand-darkBg rounded-2xl overflow-hidden shadow-lg hover-lift border border-gray-100 dark:border-gray-800 flex flex-col h-full">
-                    <div class="h-56 relative group overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Business English">
-                        <div class="absolute inset-0 bg-brand-lightBlue/60 flex items-center justify-center">
-                            <h3 class="font-heading text-2xl font-bold text-white tracking-wide">Business English</h3>
-                        </div>
+                <!-- Business English -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-soft hover-lift group border border-gray-100">
+                    <div class="bg-brand-purpleLight w-16 h-16 rounded-2xl flex items-center justify-center text-brand-purple text-3xl mb-8 group-hover:bg-brand-purple group-hover:text-white transition-colors">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm flex-grow">Master corporate communication, formal email writing, and interview skills for career growth.</p>
-                        <ul class="space-y-3 mb-8 text-sm font-medium dark:text-gray-300">
-                            <li class="flex items-center"><i class="fas fa-envelope-open-text text-brand-gold mr-3 w-4"></i> Email & Report writing</li>
-                            <li class="flex items-center"><i class="fas fa-user-tie text-brand-gold mr-3 w-4"></i> Presentation Skills</li>
-                            <li class="flex items-center"><i class="fas fa-clock text-brand-gold mr-3 w-4"></i> 6 Weeks Duration</li>
-                        </ul>
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <span class="font-heading font-bold text-brand-blue dark:text-white text-2xl">৳6,500</span>
-                            <button class="bg-brand-blue dark:bg-brand-lightBlue text-white px-5 py-2.5 rounded-lg font-medium hover:bg-brand-gold transition shadow-md">Enroll Now</button>
-                        </div>
-                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-3">Business English</h3>
+                    <p class="text-brand-gray mb-6 text-sm leading-relaxed">Excel in corporate meetings, formal email writing, and professional presentations.</p>
+                    <ul class="space-y-3 mb-8 text-sm font-medium text-brand-dark">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-red"></i> Corporate Vocabulary</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-red"></i> Interview Prep Included</li>
+                    </ul>
+                    <a href="#contact" class="inline-block w-full text-center bg-brand-bg text-brand-dark py-3 rounded-xl font-bold hover:bg-brand-dark hover:text-white transition-colors">View Details</a>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block border-2 border-brand-blue dark:border-white text-brand-blue dark:text-white px-8 py-3 rounded-full font-bold hover:bg-brand-blue hover:text-white dark:hover:bg-white dark:hover:text-brand-darkBg transition-colors">View All 12+ Courses</a>
             </div>
         </div>
     </section>
 
-    <!-- Free Resources Section -->
-    <section id="resources" class="py-24 bg-brand-blue text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute -left-32 top-40 w-96 h-96 bg-pattern opacity-30"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
-                <div class="w-full lg:w-1/2">
-                    <h2 class="font-heading text-4xl font-bold mb-4">Unlock Free Learning Materials</h2>
-                    <p class="text-blue-200 mb-8 text-lg">Kickstart your English journey today. Download our exclusive PDF guides, grammar cheat sheets, and vocabulary lists completely free.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20 flex justify-between items-center hover:bg-white/20 transition cursor-pointer">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-file-pdf text-red-400 text-3xl"></i>
-                                <div>
-                                    <h4 class="font-bold">500 Common Idioms PDF</h4>
-                                    <p class="text-xs text-blue-200">2.4 MB • Updated 2026</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-download text-brand-gold text-xl"></i>
-                        </div>
-                        <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20 flex justify-between items-center hover:bg-white/20 transition cursor-pointer">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-headphones text-green-400 text-3xl"></i>
-                                <div>
-                                    <h4 class="font-bold">IELTS Listening Practice Audio</h4>
-                                    <p class="text-xs text-blue-200">15.0 MB • MP3 Files</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-download text-brand-gold text-xl"></i>
-                        </div>
-                        <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20 flex justify-between items-center hover:bg-white/20 transition cursor-pointer">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-file-pdf text-red-400 text-3xl"></i>
-                                <div>
-                                    <h4 class="font-bold">Tense Mastery Cheat Sheet</h4>
-                                    <p class="text-xs text-blue-200">1.1 MB • 1-Page Guide</p>
-                                </div>
-                            </div>
-                            <i class="fas fa-download text-brand-gold text-xl"></i>
-                        </div>
+            <div class="text-center mb-16">
+                <span class="text-brand-purple font-bold tracking-wider uppercase text-sm mb-2 block">Investment</span>
+                <h2 class="font-heading text-4xl font-extrabold text-brand-dark mb-4">Simple, Transparent Pricing</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <!-- Group Batch -->
+                <div class="bg-brand-bg p-10 rounded-[2.5rem] border border-brand-purpleLight text-center hover-lift">
+                    <h3 class="font-heading text-2xl font-bold text-brand-dark mb-2">Group Batch</h3>
+                    <p class="text-brand-gray text-sm mb-6">Learn together, grow together.</p>
+                    <div class="font-heading text-5xl font-extrabold text-brand-dark mb-8">
+                        $49<span class="text-lg text-brand-gray font-sans font-normal">/mo</span>
                     </div>
+                    <ul class="space-y-4 mb-10 text-left w-max mx-auto">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-purple"></i> Max 15 Students per batch</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-purple"></i> 3 Live Classes / Week</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-purple"></i> PDF Notes & Worksheets</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-purple"></i> Course Completion Certificate</li>
+                    </ul>
+                    <a href="#contact" class="block w-full border-2 border-brand-dark text-brand-dark py-4 rounded-full font-bold hover:bg-brand-dark hover:text-white transition-all">Select Plan</a>
                 </div>
-                <div class="w-full lg:w-1/2 flex justify-center">
-                    <img src="https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Resources" class="rounded-2xl shadow-2xl border-4 border-white/10 rotate-3 hover:rotate-0 transition-transform duration-500">
+
+                <!-- 1-on-1 Mentorship -->
+                <div class="bg-brand-dark p-10 rounded-[2.5rem] text-center hover-lift shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-purple opacity-20 rounded-bl-full"></div>
+                    <div class="absolute top-4 right-4 text-brand-red font-handwriting text-2xl rotate-12">Premium</div>
+                    
+                    <h3 class="font-heading text-2xl font-bold text-white mb-2">1-on-1 Mentorship</h3>
+                    <p class="text-gray-400 text-sm mb-6">Personalized focus just for you.</p>
+                    <div class="font-heading text-5xl font-extrabold text-white mb-8">
+                        $129<span class="text-lg text-gray-400 font-sans font-normal">/mo</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-left w-max mx-auto text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> 100% Dedicated Instructor</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Flexible Timing Schedule</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Intensive Speaking Practice</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Weekly Progress Report</li>
+                    </ul>
+                    <a href="#contact" class="block w-full bg-brand-red text-white py-4 rounded-full font-bold hover:bg-red-700 transition-all shadow-cta">Select Premium Plan</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-24 bg-gray-50 dark:bg-brand-darkBg transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2 block">Success Stories</span>
-                <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-blue dark:text-white">What Our Students Say</h2>
+    <!-- Free Resources Download Banner -->
+    <section id="resources" class="py-20 bg-brand-purple relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div class="md:w-2/3">
+                <h2 class="font-heading text-4xl font-extrabold text-brand-dark mb-4">Grab Our Free Grammar Book!</h2>
+                <p class="text-brand-dark/80 text-lg mb-6 max-w-xl">Download our exclusive "100 Common Grammar Mistakes" PDF and start improving your English instantly, no credit card required.</p>
+                <div class="flex items-center gap-4">
+                    <button class="bg-brand-dark text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition-all shadow-lg flex items-center gap-2">
+                        <i class="fas fa-download"></i> Download Free PDF
+                    </button>
+                    <span class="font-handwriting text-2xl text-brand-red rotate-[-10deg]">100% Free!</span>
+                </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-white dark:bg-brand-darkCard p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 relative">
-                    <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100 dark:text-gray-700"></i>
-                    <div class="flex items-center gap-2 text-brand-gold mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">"I struggled with speaking fluently in meetings. The Business English course at English Center completely changed my corporate life. Highly recommended!"</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/150?img=32" alt="Student" class="w-12 h-12 rounded-full object-cover">
+            <div class="md:w-1/3 flex justify-center">
+                <div class="w-48 h-64 bg-white rounded-xl shadow-2xl rotate-6 transform hover:rotate-0 transition-transform p-4 border-4 border-brand-purpleLight flex flex-col items-center justify-center text-center">
+                    <i class="fas fa-file-pdf text-6xl text-brand-red mb-4"></i>
+                    <h4 class="font-heading font-bold text-brand-dark">Grammar<br>Mastery</h4>
+                    <p class="text-xs text-brand-gray mt-2">12 Pages • 2.5 MB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motivation / Testimonial Banner -->
+    <section class="py-24 bg-brand-bg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-dark rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row relative">
+                <div class="absolute right-0 top-0 w-80 h-full bg-brand-red skew-x-12 translate-x-20 opacity-90 hidden md:block z-0"></div>
+                
+                <div class="p-12 md:p-20 w-full md:w-2/3 z-10 relative">
+                    <i class="fas fa-quote-left text-brand-purple text-6xl mb-6 opacity-30 absolute top-10 left-10"></i>
+                    <h2 class="font-heading text-3xl md:text-5xl font-bold text-white mb-8 leading-tight relative z-10 pt-4">
+                        "This center changed my life. I can now speak English with total confidence in corporate meetings!"
+                    </h2>
+                    <div class="flex items-center gap-4 relative z-10">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Student" class="w-14 h-14 rounded-full border-2 border-brand-purple">
                         <div>
-                            <h4 class="font-bold text-brand-blue dark:text-white">Sarah Rahman</h4>
-                            <p class="text-xs text-gray-500">Corporate Executive</p>
+                            <h4 class="font-bold text-white text-lg">Rifat Ahmed</h4>
+                            <div class="flex items-center gap-1 text-brand-purple text-xs mt-1">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Review 2 -->
-                <div class="bg-white dark:bg-brand-darkCard p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 relative">
-                    <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100 dark:text-gray-700"></i>
-                    <div class="flex items-center gap-2 text-brand-gold mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                
+                <div class="p-12 md:p-20 w-full md:w-1/3 bg-brand-red md:bg-transparent z-10 flex flex-col justify-center items-start md:items-end text-white">
+                    <div class="font-handwriting text-5xl text-center md:text-right leading-tight mb-8">
+                        Good English<br>
+                        Builds<br>
+                        Great Opportunities
                     </div>
-                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">"Got an overall 8.0 in IELTS! The mock tests and personalized writing feedback from the instructors were the exact things I needed to succeed."</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/150?img=11" alt="Student" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <h4 class="font-bold text-brand-blue dark:text-white">Fahim Ahmed</h4>
-                            <p class="text-xs text-gray-500">IELTS Band 8.0</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="bg-white dark:bg-brand-darkCard p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 relative">
-                    <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100 dark:text-gray-700"></i>
-                    <div class="flex items-center gap-2 text-brand-gold mb-4">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">"Before joining, I had zero confidence in speaking. The friendly environment and continuous practice sessions built up my spoken English dramatically."</p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://i.pravatar.cc/150?img=47" alt="Student" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <h4 class="font-bold text-brand-blue dark:text-white">Nadia Islam</h4>
-                            <p class="text-xs text-gray-500">University Student</p>
-                        </div>
-                    </div>
+                    <a href="#contact" class="bg-white text-brand-red px-8 py-3.5 rounded-full font-bold hover:bg-brand-dark hover:text-white transition-colors shadow-lg">
+                        Join Us Today &rarr;
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-24 bg-white dark:bg-brand-darkCard transition-colors">
+    <section id="faq" class="py-24 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2 block">Clear Your Doubts</span>
-                <h2 class="font-heading text-4xl font-bold text-brand-blue dark:text-white">Frequently Asked Questions</h2>
+                <h2 class="font-heading text-4xl font-extrabold text-brand-dark mb-4">Got Questions?</h2>
+                <p class="text-brand-gray">Everything you need to know about the platform and courses.</p>
             </div>
-            
+
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-brand-darkBg">
+                <!-- FAQ 1 -->
+                <div class="border border-brand-purple/20 rounded-2xl bg-brand-bg hover:border-brand-purple transition-colors">
                     <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
-                        <span class="font-bold text-lg dark:text-white">Do you offer both online and offline classes?</span>
-                        <i class="fas fa-plus text-brand-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-0 text-gray-600 dark:text-gray-400 border-t-0 border-gray-200 dark:border-gray-700">
-                        <p class="pb-5 pt-2">Yes! We provide fully interactive live online classes via Zoom as well as traditional in-person classes at our physical campus.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-brand-darkBg">
-                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
-                        <span class="font-bold text-lg dark:text-white">Will I get a certificate after completing a course?</span>
-                        <i class="fas fa-plus text-brand-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-0 text-gray-600 dark:text-gray-400 border-t-0 border-gray-200 dark:border-gray-700">
-                        <p class="pb-5 pt-2">Absolutely. Upon successful completion of your course and passing the final assessment, you will receive a verifiable digital and physical certificate from English Center.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-brand-darkBg">
-                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
-                        <span class="font-bold text-lg dark:text-white">Can I switch my batch timings later?</span>
-                        <i class="fas fa-plus text-brand-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-0 text-gray-600 dark:text-gray-400 border-t-0 border-gray-200 dark:border-gray-700">
-                        <p class="pb-5 pt-2">Yes, subject to seat availability, we allow students to request a batch transfer within the first two weeks of enrollment.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-brand-darkBg">
-                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
-                        <span class="font-bold text-lg dark:text-white">How do I access the Student Dashboard?</span>
-                        <i class="fas fa-plus text-brand-gold transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer px-6 pb-0 text-gray-600 dark:text-gray-400 border-t-0 border-gray-200 dark:border-gray-700">
-                        <p class="pb-5 pt-2">Once you enroll, you will receive an email with your login credentials. You can click on the "Student Login" button in the navigation bar to access your portal, track progress, and download class materials.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-gray-50 dark:bg-brand-darkBg transition-colors relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-brand-darkCard rounded-3xl p-8 lg:p-12 shadow-2xl relative z-10 border border-gray-100 dark:border-gray-800">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                    <!-- Contact Info -->
-                    <div>
-                        <span class="text-brand-gold font-bold tracking-wider uppercase text-sm mb-2 block">Reach Out</span>
-                        <h2 class="font-heading text-4xl font-bold text-brand-blue dark:text-white mb-6">Let's Start Your Journey</h2>
-                        <p class="text-gray-600 dark:text-gray-300 mb-10 text-lg">Have questions about which course to pick? Book a free counseling session or drop us a message.</p>
-                        
-                        <div class="space-y-8">
-                            <div class="flex items-center gap-5 group cursor-pointer">
-                                <div class="w-14 h-14 bg-blue-50 dark:bg-brand-darkBg text-brand-blue dark:text-brand-gold rounded-full flex items-center justify-center text-2xl shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-all">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg dark:text-white">Call Us Directly</h4>
-                                    <p class="text-gray-600 dark:text-gray-400">+880 1234 567 890</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-5 group cursor-pointer">
-                                <div class="w-14 h-14 bg-blue-50 dark:bg-brand-darkBg text-brand-blue dark:text-brand-gold rounded-full flex items-center justify-center text-2xl shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-all">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg dark:text-white">WhatsApp Support</h4>
-                                    <p class="text-gray-600 dark:text-gray-400">+880 9876 543 210</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-5 group cursor-pointer">
-                                <div class="w-14 h-14 bg-blue-50 dark:bg-brand-darkBg text-brand-blue dark:text-brand-gold rounded-full flex items-center justify-center text-2xl shadow-sm group-hover:bg-brand-gold group-hover:text-white transition-all">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg dark:text-white">Email Address</h4>
-                                    <p class="text-gray-600 dark:text-gray-400">info@englishcenter.com</p>
-                                </div>
-                            </div>
+                        <span class="font-bold text-lg text-brand-dark">Do you offer both online and offline classes?</span>
+                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-purple shadow-sm">
+                            <i class="fas fa-plus transition-transform duration-300"></i>
                         </div>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-gray text-sm">
+                        <p class="pb-6 pt-2">Yes! We provide fully interactive live online classes via Zoom as well as traditional offline classes at our physical campuses in major cities.</p>
                     </div>
-                    
-                    <!-- Contact Form -->
-                    <div class="bg-gray-50 dark:bg-brand-darkBg p-8 rounded-2xl border border-gray-100 dark:border-gray-700">
-                        <h3 class="font-heading text-2xl font-bold mb-6 dark:text-white">Send a Message</h3>
-                        <form id="contactForm" onsubmit="event.preventDefault(); alert('Message sent successfully! We will contact you soon.');">
-                            <div class="mb-5">
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
-                                <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-brand-darkCard text-gray-800 dark:text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone Number</label>
-                                    <input type="tel" required placeholder="+880..." class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-brand-darkCard text-gray-800 dark:text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Interested Course</label>
-                                    <select class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-brand-darkCard text-gray-800 dark:text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition">
-                                        <option>Spoken English</option>
-                                        <option>IELTS Prep</option>
-                                        <option>Business English</option>
-                                        <option>Kids English</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="mb-6">
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Message</label>
-                                <textarea rows="4" required placeholder="How can we help you?" class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-brand-darkCard text-gray-800 dark:text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold transition"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-brand-blue hover:bg-brand-gold text-white font-bold py-4 px-4 rounded-xl transition-colors shadow-lg text-lg flex items-center justify-center gap-2">
-                                Submit Enquiry <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="border border-brand-purple/20 rounded-2xl bg-brand-bg hover:border-brand-purple transition-colors">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
+                        <span class="font-bold text-lg text-brand-dark">Is the course fee refundable?</span>
+                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-purple shadow-sm">
+                            <i class="fas fa-plus transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-gray text-sm">
+                        <p class="pb-6 pt-2">We offer a 100% money-back guarantee within the first 3 days of class if you feel our teaching style doesn't match your needs.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="border border-brand-purple/20 rounded-2xl bg-brand-bg hover:border-brand-purple transition-colors">
+                    <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none faq-btn">
+                        <span class="font-bold text-lg text-brand-dark">Do I get a certificate at the end?</span>
+                        <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-brand-purple shadow-sm">
+                            <i class="fas fa-plus transition-transform duration-300"></i>
+                        </div>
+                    </button>
+                    <div class="faq-answer px-6 pb-0 text-brand-gray text-sm">
+                        <p class="pb-6 pt-2">Absolutely. All students who complete the course and pass the final evaluation will receive a verified digital and physical certificate.</p>
                     </div>
                 </div>
             </div>
@@ -614,160 +473,132 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#051120] text-gray-300 pt-20 pb-10 border-t border-gray-800">
+    <footer id="contact" class="bg-brand-dark text-white pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 border-b border-gray-700 pb-16">
                 <!-- Brand Info -->
                 <div class="lg:col-span-1">
-                    <span class="font-heading font-extrabold text-3xl text-white tracking-tight block mb-4">
-                        English<span class="text-brand-gold">Center</span>
-                    </span>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="bg-brand-purple text-brand-dark p-2 rounded-lg">
+                            <i class="fas fa-book-reader text-xl"></i>
+                        </div>
+                        <span class="font-heading font-extrabold text-2xl text-white leading-none tracking-tight">
+                            English<span class="text-brand-red">.</span>
+                        </span>
+                    </div>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        The ultimate destination to master the English language. Empowering individuals to speak fluently and confidently on a global scale.
+                        Learn, Practice, Succeed. Open new doors of global opportunities with our premium educational platform.
                     </p>
-                    <div class="flex space-x-3">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-gold transition-colors"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-gold transition-colors"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-gold transition-colors"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-brand-gold transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    <div class="font-handwriting text-2xl text-brand-purple rotate-[-5deg]">
+                        Open New Opportunities!
                     </div>
                 </div>
                 
                 <!-- Links -->
                 <div>
-                    <h4 class="text-white font-bold mb-6 font-heading text-lg">Explore Links</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#about" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> About Us</a></li>
-                        <li><a href="#courses" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> All Courses</a></li>
-                        <li><a href="#testimonials" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Success Stories</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Latest Blog Posts</a></li>
-                    </ul>
-                </div>
-
-                <!-- Support -->
-                <div>
-                    <h4 class="text-white font-bold mb-6 font-heading text-lg">Student Support</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#resources" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Free Downloads</a></li>
-                        <li><a href="#faq" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> FAQs</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Terms & Conditions</a></li>
-                        <li><a href="#" class="hover:text-brand-gold transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Privacy Policy</a></li>
+                    <h4 class="font-heading font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-brand-red transition">Home</a></li>
+                        <li><a href="#courses" class="hover:text-brand-red transition">All Courses</a></li>
+                        <li><a href="#pricing" class="hover:text-brand-red transition">Pricing & Plans</a></li>
+                        <li><a href="#faq" class="hover:text-brand-red transition">Student FAQ</a></li>
                     </ul>
                 </div>
                 
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-brand-red mt-1"></i> 123 Education Hub, Global City, Dhaka, BD</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-brand-red"></i> +880 1234 567 890</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-brand-red"></i> hello@englishcenter.com</li>
+                    </ul>
+                </div>
+
                 <!-- Newsletter -->
                 <div>
-                    <h4 class="text-white font-bold mb-6 font-heading text-lg">Newsletter</h4>
-                    <p class="text-sm text-gray-400 mb-4">Subscribe to get free grammar tips and course discounts directly in your inbox.</p>
-                    <form onsubmit="event.preventDefault(); alert('Subscribed!');" class="flex flex-col gap-3">
-                        <input type="email" placeholder="Your Email Address" required class="bg-gray-800 border border-gray-700 text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-brand-gold w-full text-sm">
-                        <button type="submit" class="bg-brand-gold hover:bg-yellow-600 text-white font-bold py-2.5 px-4 rounded-lg transition-colors w-full text-sm">Subscribe Now</button>
+                    <h4 class="font-heading font-bold text-lg mb-6">Subscribe</h4>
+                    <p class="text-xs text-gray-400 mb-4">Get grammar tips and free materials in your inbox.</p>
+                    <form onsubmit="event.preventDefault();" class="flex flex-col gap-3">
+                        <input type="email" placeholder="Email Address" required class="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded-xl focus:outline-none focus:border-brand-purple text-sm">
+                        <button type="submit" class="bg-brand-red text-white py-3 rounded-xl font-bold hover:bg-red-700 transition-colors shadow-cta text-sm">Subscribe</button>
                     </form>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-                <p>Copyright &copy; 2026 English Center. All rights reserved.</p>
-                <p class="mt-2 md:mt-0">Designed & Developed for Educational Excellence.</p>
+            <div class="text-center md:flex md:justify-between md:text-left text-sm text-gray-500">
+                <p>&copy; 2026 English Learning Center. All Rights Reserved.</p>
+                <div class="space-x-5 mt-4 md:mt-0 text-white">
+                    <a href="#" class="hover:text-brand-purple transition"><i class="fab fa-facebook-f text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-purple transition"><i class="fab fa-youtube text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-purple transition"><i class="fab fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-purple transition"><i class="fab fa-linkedin-in text-lg"></i></a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Interactive Scripts -->
     <script>
-        // --- Mobile Menu Logic ---
+        // Mobile Menu Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const mobileLinks = menu.querySelectorAll('a');
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+            const icon = btn.querySelector('i');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.replace('fa-times', 'fa-bars');
+            } else {
+                icon.classList.replace('fa-bars', 'fa-times');
+            }
         });
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menu.classList.add('hidden');
+                btn.querySelector('i').classList.replace('fa-times', 'fa-bars');
             });
         });
 
-        // --- Dark/Light Mode Logic ---
-        const html = document.documentElement;
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
-        const themeIconMobile = document.getElementById('theme-icon-mobile');
-
-        function updateThemeUI(isDark) {
-            if (isDark) {
-                html.classList.add('dark');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                themeIconMobile.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                html.classList.remove('dark');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                themeIconMobile.classList.replace('fa-sun', 'fa-moon');
-            }
-        }
-
-        // Initialize
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            updateThemeUI(true);
-        } else {
-            updateThemeUI(false);
-        }
-
-        // Toggle handlers
-        const toggleTheme = () => {
-            const isDark = !html.classList.contains('dark');
-            localStorage.theme = isDark ? 'dark' : 'light';
-            updateThemeUI(isDark);
-        };
-
-        themeToggleBtn.addEventListener('click', toggleTheme);
-        themeToggleBtnMobile.addEventListener('click', toggleTheme);
-
-        // --- Navbar Scroll Effect ---
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-md');
-                navbar.classList.remove('py-2');
-            } else {
-                navbar.classList.remove('shadow-md');
-                navbar.classList.add('py-2');
-            }
-        });
-
-        // --- FAQ Accordion Logic ---
+        // FAQ Accordion Logic
         const faqBtns = document.querySelectorAll('.faq-btn');
         faqBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const answer = this.nextElementSibling;
                 const icon = this.querySelector('i');
                 
-                // Close all other answers
+                // Close all other
                 faqBtns.forEach(otherBtn => {
                     if (otherBtn !== this) {
                         otherBtn.nextElementSibling.style.maxHeight = null;
-                        otherBtn.nextElementSibling.classList.remove('border-t');
                         otherBtn.querySelector('i').classList.replace('fa-minus', 'fa-plus');
                         otherBtn.querySelector('i').style.transform = "rotate(0deg)";
                     }
                 });
 
-                // Toggle current answer
+                // Toggle current
                 if (answer.style.maxHeight) {
                     answer.style.maxHeight = null;
-                    answer.classList.remove('border-t');
                     icon.classList.replace('fa-minus', 'fa-plus');
                     icon.style.transform = "rotate(0deg)";
                 } else {
                     answer.style.maxHeight = answer.scrollHeight + "px";
-                    answer.classList.add('border-t');
                     icon.classList.replace('fa-plus', 'fa-minus');
                     icon.style.transform = "rotate(180deg)";
                 }
             });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
         });
     </script>
 </body>
